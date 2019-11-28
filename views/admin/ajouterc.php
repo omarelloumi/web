@@ -7,7 +7,6 @@ $listeCategories=$Categorie1C->AfficherCategorie() ;
 <html lang="en">
 
 <head>
-	<script language="javascript" src="verifajouterc.js>"></script>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,6 +27,7 @@ $listeCategories=$Categorie1C->AfficherCategorie() ;
 </head>
 
 <body id="page-top">
+	<script language="javascript" src="verifajouterc.js>"></script>
 
   <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 

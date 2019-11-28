@@ -161,7 +161,7 @@ foreach($listeCategories as $row)
 	<input type="hidden" value="<?PHP echo $row['id']; ?>" name="Id">
 	</form>
 	</td>
-	<td><a href="modifierc.php?Id=<?PHP echo $row['id']; ?>"><input class="btn btn-primary btn-block" type="button" value="Modifier" name="B3" ></a>
+	<td><a href="modifierc.php?Id=<?PHP echo $row['id']; ?>"><input class="btn btn-primary btn-block" type="button" value="Modifier" name="Modifier" ></a>
 	</td>
 	</tr>
 	<?PHP

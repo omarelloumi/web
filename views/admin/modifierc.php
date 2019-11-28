@@ -1,15 +1,6 @@
 <!DOCTYPE html>
-<?PHP
-include "C:\wamp/www/entities/Categorie.php" ;
-include "C:\wamp\www\core\CategorieC.php" ;
-if (isset($_GET['Id'])){
-	$CategorieC=new CategorieC();
-    $result=$CategorieC->RecupererCategorie($_GET['Id']);
-	foreach($result as $row){
-		$Id=$row['id'];
-		$Nom=$row['nom'];
-		
-?>
+	
+
 <html lang="en">
 
 <head>
@@ -146,24 +137,34 @@ if (isset($_GET['Id'])){
 
     <div id="content-wrapper">
 		<center><h1>Modifier catégorie</h1></center>
-		<form name="f" action="ajoutercategorie.php" method="get">
+		<form name="f" action="modifierc.php" method="get">
 <div class="form-label-group">
+	<?PHP
+include "C:\wamp/www/entities/Categorie.php" ;
+include "C:\wamp\www\core\CategorieC.php" ;
+if (isset($_GET['Id'])){
+	$CategorieC=new CategorieC();
+    $result=$CategorieC->RecupererCategorie($_GET['Id']);
+	foreach($result as $row){
+		$Id=$row['id'];
+		$Nom=$row['nom'];
+	?>
 	<form method="POST">
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 <tr>
 <td>Id</td>
-<td><input class="form-control" type="text" name="Idd" value="<?PHP echo $Id ?>"></td>
+<td><input class="form-control" type="text" name="Id" value="<?PHP echo $Id; ?>"></td>
 </tr>
 <tr>
 <td>Nom</td>
-<td><input class="form-control" type="text" name="Nom" value="<?PHP echo $Nom ?>"></td>
+<td><input class="form-control" type="text" name="Nom" value="<?PHP echo $Nom; ?>"></td>
 </tr>
 
 <tr>
 <td></td>
 <td><input class="btn btn-primary btn-block" type="submit" name="modifier" value="modifier"></td>
 </tr>
-
+<input type="hidden" name="Idd" value="<?PHP echo $_GET['Id'];?>">
 </table>
 </form>
 <?PHP
@@ -172,7 +173,7 @@ if (isset($_GET['Id'])){
 if (isset($_POST['modifier'])){
 	$Categorie=new Categorie($_POST['Id'],$_POST['Nom']);
 	$CategorieC->ModifierCategorie($Categorie,$_POST['Idd']);
-	echo $_POST['Idd'];
+	//echo $_POST['Idd'];
 	header('Location: afficherc.php');
 }
 ?>

@@ -51,9 +51,9 @@ try{
         $req=$db->prepare($sql);
 		$Idd=$Categorie->getId();
         $Nom=$Categorie->getNom();
-		$datas = array(':Idd'=>$Idd, ':Id'=>$Id, ':Nom'=>$Nom);
-		$req->bindValue(':Idd',$Idd);
+		$datas = array( ':Idd'=>$Idd,':Id'=>$Id, ':Nom'=>$Nom);
 		$req->bindValue(':Id',$Id);
+		$req->bindValue(':Idd',$Idd);
 		$req->bindValue(':Nom',$Nom);
 		
 		
