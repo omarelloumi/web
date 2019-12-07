@@ -6,6 +6,7 @@ class Produit
 	public $Prix ;
 	public $Cat;
 	public $Img;
+	public $Qte;
 	public function getRef()
 	{
 		return $this->Ref ;
