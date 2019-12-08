@@ -4,7 +4,7 @@ class ProduitC
 {
 	function AjouterProduit($Produit)
 	{
-		$sql = "insert into produits (ref,nom,prix,cat,img) values(:Ref,:Nom,:Prix,:Cat,:Img)";
+		$sql = "insert into produits (ref,nom,prix,cat,img,qte) values(:Ref,:Nom,:Prix,:Cat,:Img,:Qte)";
 		$db = config::getConnexion() ;
 		try
 		{
@@ -14,6 +14,7 @@ class ProduitC
 			$req->BindValue(':Prix',$Produit->getPrix()) ;
 			$req->BindValue(':Cat',$Produit->getCat()) ;
 			$req->BindValue(':Img',$Produit->getImg()) ;
+			$req->BindValue(':Qte',$Produit->getQte()) ;
 			$req->execute();
 			return true ;
 		}
@@ -31,6 +32,7 @@ class ProduitC
 		echo "Prix: ".$Produit->getPrix()."<br>";
 		echo "Cat: ".$Produit->getCat()."<br>";
 		echo "Img: ".$Produit->getImg()."<br>";
+		echo "Qte: ".$Produit->getQte()."<br>";
 	}
 	
 	function AfficherProduit()
