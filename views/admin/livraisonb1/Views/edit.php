@@ -146,7 +146,11 @@ if(isset($_POST['btn-update'])){
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
-	 
+	 <li class="nav-item">
+        <a class="nav-link" href="../../produits.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Produits</span></a>
+      </li>
 	  <li class="nav-item">
         <a class="nav-link" href="livraison.html">
           <i class="fas fa-fw fa-table"></i>
