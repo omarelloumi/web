@@ -1,0 +1,48 @@
+body a {
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+}
+.bouton
+{
+	display: block;
+	position: relative;
+	padding: 11px 15px;
+	letter-spacing: 1px;
+	background: #212121;
+	font-size: 1em;
+	color: #fff;
+	font-weight: 600;
+	border: none;
+	outline: none;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.bouton1
+{
+	display: block;
+	position: relative;
+	padding: 11px 30px;
+	letter-spacing: 1px;
+	background: #212121;
+	font-size: 1em;
+	color: #fff;
+	font-weight: 600;
+	border: none;
+	outline: none;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+	-ms-transition: 0.5s all;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin-top:20px;
+}

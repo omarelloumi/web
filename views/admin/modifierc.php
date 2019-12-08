@@ -133,6 +133,11 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Produits</span></a>
       </li>
+		<li class="nav-item">
+        <a class="nav-link" href="./livraisonb1/Views/livraison.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Livraison/Livreurs</span></a>
+      </li>
     </ul>
 
     <div id="content-wrapper">
@@ -164,16 +169,16 @@ if (isset($_GET['Id'])){
 <td></td>
 <td><input class="btn btn-primary btn-block" type="submit" name="modifier" value="modifier"></td>
 </tr>
-<input type="hidden" name="Idd" value="<?PHP echo $_GET['Id'];?>">
 </table>
+		<input type="hidden" name="Idd" value="<?PHP echo $_GET['Id'];?>">
 </form>
 <?PHP
 	}
 }
-if (isset($_POST['modifier'])){
+if (isset($_POST['Idd'])){
 	$Categorie=new Categorie($_POST['Id'],$_POST['Nom']);
 	$CategorieC->ModifierCategorie($Categorie,$_POST['Idd']);
-	//echo $_POST['Idd'];
+	echo $_POST['Idd'];
 	header('Location: afficherc.php');
 }
 ?>

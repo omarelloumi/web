@@ -136,6 +136,11 @@ $listeCategories=$Categorie1C->AfficherCategorie();
           <i class="fas fa-fw fa-table"></i>
           <span>Produits</span></a>
       </li>
+		<li class="nav-item">
+        <a class="nav-link" href="./livraisonb1/Views/livraison.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Livraison/Livreurs</span></a>
+      </li>
     </ul>
 
     <div id="content-wrapper">
@@ -162,6 +167,9 @@ foreach($listeCategories as $row)
 ?></select><br>
 	<h4>Le nom de l'image: </h4>
 	<input name = "img" type="text"  class="form-control"  required="required" >
+	<br>
+	<h4>Quantité: </h4>
+	<input name = "qte" type="text"  class="form-control"  required="required" >
 	<br>
 		
         <input class="btn btn-primary btn-block" type="submit"  value="Ajouter" onClick="verif();" >

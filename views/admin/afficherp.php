@@ -136,18 +136,23 @@ $listeProduits=$Produit1C->AfficherProduit();
           <i class="fas fa-fw fa-table"></i>
           <span>Produits</span></a>
       </li>
+		<li class="nav-item">
+        <a class="nav-link" href="./livraisonb1/Views/livraison.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Livraison/Livreurs</span></a>
+      </li>
     </ul>
 
     <div id="content-wrapper">
 
      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 <tr>
-<th>ID</th>
+<th>Ref</th>
 <th>Nom</th>
 	<th>Prix</th>
 	<th>Cat</th>
 	<th>Image</th>
-
+<th>Quantité</th>
 <th>Supprimer</th>
 <th>Modifier</th>
 </tr>
@@ -161,7 +166,9 @@ foreach($listeProduits as $row)
 	<td><?PHP echo $row['nom']; ?></td>
 			<td><?PHP echo $row['prix']; ?></td>
 			<td><?PHP echo $row['cat']; ?></td>
-			<td><img src="C:\wamp\www\views\images\<?PHP echo $row['img']; ?>.jpg"></td>
+		     <?PHP $img="C:\wamp\www\views\images\"". $row['img'].".jpg"; ?>
+			<td><img src="<?php echo $img ;?>"</td>
+				<td><?php echo $row['qte'];?></td>
 	
 	<td><form method="POST" action="supprimerp.php">
 	 <input class="btn btn-primary btn-block" type="submit" name="supprimer"  value="Supprimer">
