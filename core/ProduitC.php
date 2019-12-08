@@ -50,7 +50,7 @@ class ProduitC
 	
 	function ModifierProduit($Produit,$Ref)
 {
-		$sql="UPDATE produits SET Ref=:Reff, Nom=:Nom,Prix=:Prix ,Cat=:Cat ,Img=:Img WHERE Ref=:Ref";
+		$sql="UPDATE produits SET Ref=:Reff, Nom=:Nom,Prix=:Prix ,Cat=:Cat ,Img=:Img, Qte=:Qte WHERE Ref=:Ref";
 		
 		$db = config::getConnexion();
 		//$db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
@@ -61,13 +61,15 @@ try{
         $Prix=$Produit->getPrix();
 		$Cat=$Produit->getCat();
 		$Img=$Produit->getImg();
-		$datas = array(':Reff'=>$Reff, ':Ref'=>$Ref, ':Nom'=>$Nom,':Prix'=>$Prix,':Cat'=>$Cat,':Img'=>$Img);
+		$Qte=$Produit->getQte();
+		$datas = array(':Reff'=>$Reff, ':Ref'=>$Ref, ':Nom'=>$Nom,':Prix'=>$Prix,':Cat'=>$Cat,':Img'=>$Img,':Qte'=>$Qte);
 		$req->bindValue(':Reff',$Reff);
 		$req->bindValue(':Ref',$Ref);
 		$req->bindValue(':Nom',$Nom);
 		$req->bindValue(':Prix',$Prix);
 		$req->bindValue(':Cat',$Cat);
 		$req->bindValue(':Img',$Img);
+		$req->bindValue(':Qte',$Qte);
 		
             $s=$req->execute();
 			
