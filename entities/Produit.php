@@ -27,6 +27,10 @@ class Produit
 	{
 		return $this->Img ;
 	}
+	public function getQte()
+	{
+		return $this->Qte ;
+	}
 	public function setRef($Ref)
 	{
 		$this->Ref=$Ref ;
@@ -47,13 +51,18 @@ class Produit
 	{
 		$this->Img=$Img ;
 	}
-	public function __construct($Ref,$Nom,$Prix,$Cat,$Img)
+	public function setQte($Qte)
+	{
+		$this->Qte=$Qte ;
+	}
+	public function __construct($Ref,$Nom,$Prix,$Cat,$Img,$Qte)
 	{
 		$this->Ref=$Ref ;
 		 $this->Nom=$Nom ;
 		$this->Prix=$Prix ;
 		$this->Cat=$Cat;
 		$this->Img=$Img ;
+		$this->Qte=$Qte ;
 	}
 }
 ?>
