@@ -164,10 +164,10 @@ foreach($listeProduits as $row)
 	<tr>
 	<td><?PHP echo $row['ref']; ?></td>
 	<td><?PHP echo $row['nom']; ?></td>
-			<td><?PHP echo $row['prix']; ?></td>
-			<td><?PHP echo $row['cat']; ?></td>
-		     <?PHP $img="C:\wamp\www\views\images\"". $row['img'].".jpg"; ?>
-			<td><img src="<?php echo $img ;?>"</td>
+	<td><?PHP echo $row['prix']; ?></td>
+	<td><?PHP echo $row['cat']; ?></td>
+	<td><img src="images/<?php echo $row['img'];?>" style="width:200px"></td>
+
 				<td><?php echo $row['qte'];?></td>
 	
 	<td><form method="POST" action="supprimerp.php">

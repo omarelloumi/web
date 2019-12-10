@@ -120,5 +120,16 @@ try{
             die('Erreur: '.$e->getMessage());
         }
 	}
+	function RechercherListecProduit($Nom){
+		$sql="SELECT * from produits where cat=$Nom";
+		$db = config::getConnexion();
+		try{
+		$liste=$db->query($sql);
+		return $liste;
+		}
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
+	}
 }
 ?>
