@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
    <head>
-      <title>chakib driss meubles | Home :: w3layouts</title>
+      <title>Toys Shop an Ecommerce Category Bootstrap Responsive Web Template | Home :: w3layouts</title>
       <!--meta tags -->
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,9 +32,6 @@
       <!--Shoping cart-->
       <link rel="stylesheet" href="css/shop.css" type="text/css" />
       <!--//Shoping cart-->
-      <!--price range-->
-      <link rel="stylesheet" type="text/css" href="css/jquery-ui1.css">
-      <!--//price range-->
       <!--stylesheets-->
       <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
       <!--//stylesheets-->
@@ -50,11 +47,11 @@
                <ul>
                   <li>
                      <span class="fas fa-phone-volume"></span>
-                     <p>+(216)28 497 325</p>
+                     <p>+(000)123 4565 32</p>
                   </li>
                   <li>
                      <span class="fas fa-envelope"></span>
-                     <p><a href="mailto:info@example.com">dolecasa@gmail.com</a></p>
+                     <p><a href="mailto:info@example.com">info@example1.com</a></p>
                   </li>
                   <li>
                   </li>
@@ -64,7 +61,7 @@
          <div class="container-fluid">
             <div class="hedder-up row">
                <div class="col-lg-3 col-md-3 logo-head">
-                  <h1><a class="navbar-brand" href="index.html">Dolce casa</a></h1>
+                  <h1><a class="navbar-brand" href="index.html">Toys-Shop</a></h1>
                </div>
                <div class="col-lg-5 col-md-6 search-right">
                   <form class="form-inline my-lg-0">
@@ -100,25 +97,25 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-               <ul class="navbar-nav ">
-                  <li class="nav-item ">
-                     <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="about.html" class="nav-link">About</a>
-                  </li>
-                  <li class="nav-item">
-                     <a href="service.html" class="nav-link">Service</a>
-                  </li>
-                  
-                  
-                 <li class="nav-item dropdown">
+                   <ul class="navbar-nav ">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="service.html" class="nav-link">Service</a>
+                     </li>
+                    
+                 
+					    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         categories
                         </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">	
 						  <?php
-						  include("C:\wamp\www\core\CategorieC.php");
+						  include("../core/categorieC.php");
 						  $categorieC=new CategorieC();
 						  $liste=$categorieC->AfficherCategorie();
 						  while($row=$liste->fetch())
@@ -134,117 +131,86 @@
 					  ?>
 							 </div>
 							</li>
-                  <li class="nav-item">
-                     <a href="contact.html " class="nav-link">Contact</a>
-                  </li>
-               </ul>
-            </div>
-         </nav>
-      </div>
-	  </div>
-      <!--//headder-->
-      <!-- banner -->
-      <div class="inner_page-banner one-img">
-      </div>
-      <!--//banner -->
-      <!-- short -->
-      <div class="using-border py-3">
-         <div class="inner_breadcrumb  ml-4">
-            <ul class="short_ls">
-               <li>
-                  <a href="index.html">Home</a>
-                  <span>/ /</span>
-               </li>
-               <li>Products</li>
-            </ul>
+					 
+                     <li class="nav-item">
+                        <a href="contact.php" class="nav-link">Contact</a>
+                     </li>
+                  </ul>
          </div>
       </div>
       <!-- //short-->
-      <!--show Now-->  
-	                      <?php
-						  include("C:\wamp\www\core/ProduitC.php");
-	   					if (isset($_GET['cat'])){
-
-						  $produitC=new ProduitC();
-						  $listep=$produitC->RechercherListecProduit($_GET['cat']);
-						  ?>
-      <section class="contact py-lg-4 py-md-3 py-sm-3 py-3">
-         <div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
-            
-                        <?php
-			             while($row=$listep->fetch())
-						  { if ($row['qte']>5){
-							 ?>
-                 <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6 product-men women_two">
-                        <div class="product-toys-info">
-                           <div class="men-pro-item">
-                              <div class="men-thumb-item">
-                                <img src="images/<?php echo $row['img'];?>" style="width:200px" class="img-thumbnail img-fluid" alt="">
-                                 <div class="men-cart-pro">
-                                    <div class="inner-men-cart-pro">
-                                       <a href="single.html" class="link-product-add-cart">Quick View</a>
-                                    </div>
-                                 </div>
-                                 
-                              </div>
-                              <div class="item-info-product">
-                                 <div class="info-product-price">
-                                    <div class="grid_meta">
-                                       <div class="product_price">
-                                          
-                                          <div class="grid-price mt-2">
-                                             <span class="money "><?php echo $row['prix'];?>dt <?php echo $row['nom'];?></span>
-                                          </div>
-                                       </div>
-                                      
-                                    </div>
-                                    <div class="toys single-item hvr-outline-out">
-                                       <form action="#" method="post">
-                                          <input type="hidden" name="cmd" value="_cart">
-                                          <input type="hidden" name="add" value="1">
-                                          <input type="hidden" name="toys_item" value="toys(barbie)">
-                                          <input type="hidden" name="amount" value="575.00">
-                                          <button type="submit" class="toys-cart ptoys-cart">
-                                          <i class="fas fa-cart-plus"></i>
-                                          </button>
-                                       </form>
-                                    </div>
-                                 </div>
-                                 <div class="clearfix"></div>
-                              </div>
-                           </div>
-                        </div>
-                     </div> 
-                  </div>
-			  <?php
-						  } }}
-	   ?>
+      <!--service -->
+      <section class="service py-lg-4 py-md-3 py-sm-3 py-3">
+         <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+            <h3 class="title text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Services</h3>
+            <div class="row text-center">
+               <div class="col-lg-4 col-md-6 abut-gride">
+                  <span class="fas fa-truck"></span>
+                  <h5>Shipping</h5>
+                  <p class="mt-3"> velit sagittis vehicula. Duis posuere 
+                     ex in mollis iaculis. Suspendisse tincidunt
+                  </p>
+               </div>
+               <div class="col-lg-4 col-md-6 abut-gride">
+                  <span class="fas fa-phone-volume"></span>  
+                  <h5>Support</h5>
+                  <p class="mt-3"> velit sagittis vehicula. Duis posuere 
+                     ex in mollis iaculis. Suspendisse tincidunt
+                  </p>
+               </div>
+               <div class="col-lg-4 col-md-6 abut-gride">
+                  <span class="fas fa-undo"></span>
+                  <h5> Return</h5>
+                  <p class="mt-3"> velit sagittis vehicula. Duis posuere 
+                     ex in mollis iaculis. Suspendisse tincidunt
+                  </p>
+               </div>
+               <div class="col-lg-4 col-md-6 mt-lg-4 mt-3 abut-gride">
+                  <span class="fas fa-money-bill-alt"></span>
+                  <h5>Online Cash</h5>
+                  <p class="mt-3"> velit sagittis vehicula. Duis posuere 
+                     ex in mollis iaculis. Suspendisse tincidunt
+                  </p>
+               </div>
+               <div class="col-lg-4 col-md-6 mt-lg-4 mt-3 abut-gride">
+                  <span class="fas fa-exchange-alt"></span>
+                  <h5>Exchange</h5>
+                  <p class="mt-3"> velit sagittis vehicula. Duis posuere 
+                     ex in mollis iaculis. Suspendisse tincidunt
+                  </p>
+               </div>
+               <div class="col-lg-4 col-md-6 mt-lg-4 mt-3 abut-gride">
+                  <span class="fas fa-thumbs-up"></span>
+                  <h5>Quality</h5>
+                  <p class="mt-3"> velit sagittis vehicula. Duis posuere 
+                     ex in mollis iaculis. Suspendisse tincidunt
+                  </p>
+               </div>
+            </div>
          </div>
       </section>
-	  
-      <!-- //show Now-->
+      <!--//service -->	 
       <!--subscribe-address-->
       <section class="subscribe">
          <div class="container-fluid">
          <div class="row">
             <div class="col-lg-6 col-md-6 map-info-right px-0">
-               <img src="images/map.png">
+               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3150859.767904157!2d-96.62081048651531!3d39.536794757966845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1408111832978"> </iframe>
             </div>
             <div class="col-lg-6 col-md-6 address-w3l-right text-center">
                <div class="address-gried ">
                   <span class="far fa-map"></span>
-                  <p>Hay el wahat l'aouina<br>Tunisia, Tunis
+                  <p>25478 Road St.121<br>USA New Hill
                   <p>
                </div>
                <div class="address-gried mt-3">
                   <span class="fas fa-phone-volume"></span>
-                  <p> +(216)28 497 325<br></p>
+                  <p> +(000)123 4565<br>+(010)123 4565</p>
                </div>
                <div class=" address-gried mt-3">
                   <span class="far fa-envelope"></span>
-                  <p><a href="mailto:info@example.com">dolcecasa@gmal.com</a>
-                     <br></a>
+                  <p><a href="mailto:info@example.com">info@example1.com</a>
+                     <br><a href="mailto:info@example.com">info@example2.com</a>
                   </p>
                </div>
             </div>
@@ -254,7 +220,7 @@
       <!--//subscribe-address-->
       <section class="sub-below-address py-lg-4 py-md-3 py-sm-3 py-3">
          <div class="container py-lg-5 py-md-5 py-sm-4 py-3">
-            <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Get In Touch With Us</h3>
+            <h3 class="title clr text-center mb-lg-5 mb-md-4 mb-sm-4 mb-3">Get In Touch Us</h3>
             <div class="icons mt-4 text-center">
                <ul>
                   <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
@@ -262,7 +228,11 @@
                   <li><a href="#"><span class="fas fa-rss"></span></a></li>
                   <li><a href="#"><span class="fab fa-vk"></span></a></li>
                </ul>
-               <br>
+               <p class="my-3">velit sagittis vehicula. Duis posuere 
+                  ex in mollis iaculis. Suspendisse tincidunt
+                  velit sagittis vehicula. Duis posuere 
+                  velit sagittis vehicula. Duis posuere 
+               </p>
             </div>
             <div class="email-sub-agile">
                <form action="#" method="post">
@@ -281,7 +251,7 @@
       <footer class="py-lg-4 py-md-3 py-sm-3 py-3 text-center">
          <div class="copy-agile-right">
             <p> 
-               © 2019 Dolce Casa. All Rights Reserved | Designed by <a href="http://www.W3Layouts.com" target="_blank">Honor</a>
+               © 2018 Toys-Shop. All Rights Reserved | Design by <a href="http://www.W3Layouts.com" target="_blank">W3Layouts</a>
             </p>
          </div>
       </footer>
@@ -340,25 +310,6 @@
          });
       </script>
       <!-- //cart-js -->
-      <!-- price range (top products) -->
-      <script src="js/jquery-ui.js"></script>
-      <script>
-         //<![CDATA[ 
-         $(window).load(function () {
-         	$("#slider-range").slider({
-         		range: true,
-         		min: 0,
-         		max: 9000,
-         		values: [50, 6000],
-         		slide: function (event, ui) {
-         			$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-         		}
-         	});
-         	$("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
-         
-         }); //]]>
-      </script>
-      <!-- //price range (top products) -->
       <!-- start-smoth-scrolling -->
       <script src="js/move-top.js"></script>
       <script src="js/easing.js"></script>

@@ -1,7 +1,11 @@
 <?PHP
 include "C:\wamp\www\core\CategorieC.php" ;
 $Categorie1C=new CategorieC();
-$listeCategories=$Categorie1C->AfficherCategorie() ;
+if (isset($_GET['search_key'])){
+	$listeCategories=$Categorie1C->RechercherC($_GET['search_key']) ;
+}else{
+$listeCategories=$Categorie1C->AfficherCategorie() ;}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,13 +42,16 @@ $listeCategories=$Categorie1C->AfficherCategorie() ;
     </button>
 
     <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" method="GET" action="afficherc.php">
       <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+        <input type="text" class="form-control" placeholder="Search in categories" aria-label="Search" aria-describedby="basic-addon2" name="search_key">
+		  
         <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
+            <button class="btn btn-primary" type="submit">
             <i class="fas fa-search"></i>
           </button>
+            
+          
         </div>
       </div>
     </form>
@@ -173,7 +180,9 @@ foreach($listeCategories as $row)
 }
 ?>
 </table>
-
+<form method="POST" action="pdff1.php">
+			 <input class="btn btn-primary btn-block" type="submit" name="create_pdf" value="create_pdf">
+			   </form>
       <!-- Sticky Footer -->
       <footer class="sticky-footer">
         <div class="container my-auto">

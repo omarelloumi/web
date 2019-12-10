@@ -106,5 +106,16 @@ try{
             die('Erreur: '.$e->getMessage());
         }
 	}
+	function RechercherC($key){
+		$sql="SELECT * from categories where id LIKE '%$key%' OR nom LIKE '%$key%' ";
+		$db = config::getConnexion();
+		try{
+		$liste=$db->query($sql);
+		return $liste;
+		}
+        catch (Exception $e){
+            die('Erreur: '.$e->getMessage());
+        }
+	}
 }
 ?>
