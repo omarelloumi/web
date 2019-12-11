@@ -31,6 +31,11 @@
     <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
       <i class="fas fa-bars"></i>
     </button>
+	 <!-- Navbar Search -->
+    <form method="get" action="afficher.php">
+  <input type="text" name="search_key" placeholder="chercher..." />
+  <input type="submit"  value="chercher" placeholder="chercher..." class="btn btn-default btn-primary" />
+  </form>
 
     <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
@@ -74,6 +79,7 @@
   </nav>
 
   <div id="wrapper">
+  
 
     <!-- Sidebar -->
     <ul class="sidebar navbar-nav">
@@ -110,15 +116,26 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
-	 <li class="nav-item">
-        <a class="nav-link" href="../../produits.html">
+	  <li class="nav-item">
+        <a class="nav-link" href="">
           <i class="fas fa-fw fa-table"></i>
           <span>Produits</span></a>
       </li>
 	  <li class="nav-item">
+        <a class="nav-link" href="">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Categories</span></a>
+      </li>
+	 
+	  <li class="nav-item">
         <a class="nav-link" href="livraison.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Livraison</span></a>
+      </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="reclamation.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Reclamation</span></a>
       </li>
 	  
     </ul>
@@ -136,51 +153,97 @@
           </li>
           <li class="breadcrumb-item active">Livraison</li>
         </ol>
+<style>
+table {
+border-collapse: collapse;
+width: 100%;
+color: black;
+font-family: arial;
+font-size: 15px;
+text-align: left;
+}
+th {
+background-color: #588c7e;
+color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
+</style>
 <!------------------------------------------------------------------------------------------------------------------------------------------>
 		<center><h1 class="nav-link">Liste des livraisons:</h1></center>
-	<?php
-
-	    include('../Core/livraisonCore.php');
-
-		$livraisonCore=new livraisonCore();
-		$listeLiv= $livraisonCore->affiche_return();
-	?>
-		
-<center><table border="4">
-	
-	<tr>
-	    <th class="choix">id</th>
-		<th class="choix">Number</th>
-		<th class="choix">Town</th>
-		<th class="choix">Adresse</th>
-		<th class="choix">Name</th>
-		<th class="choix">Reference</th>
-		
-		
-        
-		<td></td>
-		<td></td>
-	</tr>
-	
-
 	
 	<?php
-		while($donne = $listeLiv->fetch())
-		{
-	?>
-	    <tr>   
-            <td><?php echo $donne['id'];?></td>		
-			<td><?php echo $donne['number'];?></td>
-			<td><?php echo $donne['town'];?></td>
-			<td><?php echo $donne['adresse'];?></td>
-			<td><?php echo $donne['name'];?></td>
-			<td><?php echo $donne['ref'];?></td>
-		<td><a href="edit.php?edit_id=<?php echo $donne['id']; ?>" alt="edit" >Modifier</a></td>
+include('../Core/livraisonCore.php');
+
+$livraisonCore= new livraisonCore();
+
+
+
+
+if (isset($_GET['search_key']))
+{
+$listeevent=$livraisonCore->recherchechef($_GET['search_key']);
+}
+else
+{
+$listeevent=$livraisonCore->affiche_return(); 
+}
+?>
+		
+ <table class="table table-striped table-advance table-hover">
+                           <tbody>
+                              <tr>
+                                 <th><i class="icon_profile"></i> id</th>
+                                 <th><i class="icon_calendar"></i>number</th>
+                                 <th><i class="icon_mail_alt"></i> town</th>
+                                 <th><i class="icon_profile"></i>adresse</th>
+                                  <th><i class="icon_profile"></i>name  </th>
+                                  <th><i class="icon_profile"></i>reference</th>
+                                  <th><i class="icon_profile"></i>datel</th>
+								  <th><i class="icon_profile"></i>Cost</th>
+								  <th><i class="icon_profile"></i></th>
+								  <th><i class="icon_profile"></i></th>
+								  <th><i class="icon_profile"></i></th>
+                                  
+                                    
+                              </tr>
+                         </tbody>
+	
+
+	
+	 <?php
+    while ($donne=$listeevent->fetch())
+    {
+    ?>
+    <tbody> 
+    <tr>     
+    <td><?php echo $donne['id'] ?></td>
+    <td><?php echo $donne['number'] ?></td>
+    <td><?php echo $donne['town'] ?></td>
+    <td><?php echo $donne['adresse']?></td>
+    <td><?php echo $donne['name']?></td>
+	<td><?php echo $donne['ref']?></td>
+	<td><?php echo $donne['datel']?></td>
+			<?php
+			if($donne['town']=='tunis' || $donne['town']=='tunisia')
+			{
+			?>
+			<td><?php echo '10.00$';?></td>
+			<?php 
+			}
+			else
+			{
+			?>
+			<td><?php echo '30.00$';?></td>
+			<?php 
+			}
+			?>
+	<td><a class="btn btn-success" href="edit.php?edit_id=<?php echo $donne['id']; ?>" alt="edit" >Modifier</a></td>
 	<form method="POST" action="supprimer.php">
-    <td><input type="submit" name="supprimer" class="bouton1" value="supprimer">
+    <td><input type="submit" name="supprimer" class="btn btn-danger" value="supprimer">
     <input type="hidden" value="<?php echo $donne['id'];?>" name="id">
     </td>
     </form>
+	
 		</tr>
 		
 			
@@ -191,14 +254,17 @@
 	?>
 
 </table>
-
+<form action="pdff.php" method="post">
+	<td>
+	<center><input type="submit" name="create_pdf" class="btn btn-primary" value="create PDF" /></center>
+	</td>
+</form>
 <form method="POST" action="livraison.html" name="f4">
 <input type="submit" value="ok" onclick="test1()" class="bouton1" />
 </form>
 <form method="POST" action="livraison.html" name="f4">
 <input type="submit" value="Retour"  class="bouton1" />
 </form>
-</center>
 
 </body>
 </html>

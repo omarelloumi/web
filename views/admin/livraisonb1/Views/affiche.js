@@ -1,4 +1,4 @@
-function test1()
+function test()
 {
 	
 	alert("merci pour votre confirmation");

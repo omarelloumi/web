@@ -1,8 +1,11 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<script src="affiche.js"></script>
+	<script src="test.js"></script>
+	<script src="test1.js"></script>
 	<link href="afficher.css" rel="stylesheet" type="text/css" >
 	<script src="livraison.js"></script>
 <meta charset="UTF-8">
@@ -223,7 +226,14 @@
 		<th class="choix">Adresse</th>
 		<th class="choix">Name</th>
 		<th class="choix">Reference</th>
+		<th class="choix">Date</th>
+		<th class="choix">Cost</th>
+		<th>Reclamer</th>
 	    <th>Modifier</th>
+		<td></td>
+		<td></td>
+		<td></td>
+		
 	</tr>
 </thead>	
 	
@@ -234,6 +244,14 @@
 	<?php
 		while($donne = $listeLiv->fetch())
 		{
+		$today=date('Y/m/d');
+		$date=$donne['datel'];
+		$td=strtotime($today);
+	    $d=strtotime($date);
+		
+		
+		if($td>=$d)
+		{
 	?>
 	<tbody>
 	    <tr >   
@@ -243,23 +261,85 @@
 			<td><?php echo $donne['adresse'];?></td>
 			<td><?php echo $donne['name'];?></td>
 			<td><?php echo $donne['ref'];?></td>
+			<td><?php echo $donne['datel'];?></td>
+			<?php
+			if($donne['town']=='tunis' || $donne['town']=='tunisia')
+			{
+			?>
+			<td><?php echo '10.00$';?></td>
+			<?php 
+			}
+			else
+			{
+			?>
+			<td><?php echo '30.00$';?></td>
+			<?php 
+			}
+			?>
+		<form action='reclamer.php' method="POST">
+		<td><button value="Reclamer" class='btn btn-danger'/><strong>Reclamer</strong></td>
+		</form>
+		<td><a class="btn btn-success" href="edit.php?edit_id=<?php echo $donne['id']; ?>" alt="edit" ><strong>Modifier</strong></a></td>
+		<td>
+	    Est-ce que votre livraison a éte bien recue?
+		</td>
 		
-		<td><a href="edit.php?edit_id=<?php echo $donne['id']; ?>" alt="edit" ><strong>Modifier</strong></a></td>
-	</tbody>
+		<td><input type="submit" value="Oui" class='btn btn-info' onclick="test2()" /></td>
 		
+		<td>
+		<form method="POST" action="mailsnack .php" name="f1">
+		<input type="submit" value="Non" class='btn btn-info' onclick="test1()"/>
+		</form>
+	
+	    </td>
 	
 	</tr>
 	
 	
 			
     <?php
-		}      
+		}
+        else
+        {
 	?>
-
-
+			</tbody>
+	    <tr >   
+            <td><?php echo $donne['id'];?></td>		
+			<td><?php echo $donne['number'];?></td>
+			<td><?php echo $donne['town'];?></td>
+			<td><?php echo $donne['adresse'];?></td>
+			<td><?php echo $donne['name'];?></td>
+			<td><?php echo $donne['ref'];?></td>
+			<td><?php echo $donne['datel'];?></td>
+			<?php
+			if($donne['town']=='tunis' || $donne['town']=='tunisia')
+			{
+			?>
+			<td><?php echo '10.00$';?></td>
+			<?php 
+			}
+			else
+			{
+			?>
+			<td><?php echo '30.00$';?></td>
+			<?php 
+			}
+			?>
+		<form action='reclamer.php' method="POST">
+		<td><button value="Reclamer" class='btn btn-danger'/><strong>Reclamer</strong></td>
+		</form>
+		<td><a class="btn btn-success" href="edit.php?edit_id=<?php echo $donne['id']; ?>" alt="edit" ><strong>Modifier</strong></a></td>
+		
+<?php		
+		}			
+		}
+?>
+		
+</tbody>
+</tr>
 </table>
 <form method="POST" action="confirmer.php" name="f4">
-<input type="submit" value="ok" onclick="test1()" class="bouton1" />
+<input type="submit" value="ok" onclick="test()" class="bouton1" />
 </form>
 
 	</div>

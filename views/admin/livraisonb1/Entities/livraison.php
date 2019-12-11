@@ -8,7 +8,10 @@
 	  private $town;
 	  private $adresse;
 	  private $ref;
-	  function __construct($number,$town,$adresse,$name,$ref)
+	  private $datel;
+	  private $cost;
+	  
+	  function __construct($number,$town,$adresse,$name,$ref,$datel,$cost)
 	  { 
 	    
 	    $this->number=$number;
@@ -16,6 +19,9 @@
 		$this->adresse=$adresse;
 	    $this->name=$name;
 		$this->ref=$ref;
+		$this->datel=$datel;
+		$this->cost=$cost;
+		
 	  }
 	  
 	  function getNumber(){return $this->number;}
@@ -23,6 +29,9 @@
 	  function getAdresse(){return $this->adresse;}
 	  function getName(){return $this->name;}
 	  function getRef(){return $this->ref;}
+	  function getDatel(){return $this->datel;}
+	  function getCost(){return $this->cost;}
+	  
 	  
 	  
 	  

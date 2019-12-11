@@ -25,6 +25,8 @@ if(isset($_POST['btn-update'])){
  $name = $_POST['name'];
  $ref = $_POST['ref'];
  
+ 
+ 
  $update = "UPDATE livraison SET id='$id', number='$number',town='$town',adresse='$adresse',name='$name',ref='$ref' WHERE id=". $_GET['edit_id'];
  $up = mysqli_query($conn, $update);
  if(!isset($sql)){
@@ -36,6 +38,21 @@ if(isset($_POST['btn-update'])){
  }
 }
 ?>
+<style>
+table {
+border-collapse: collapse;
+width: 100%;
+color: black;
+font-family: arial;
+font-size: 15px;
+text-align: left;
+}
+th {
+background-color: #588c7e;
+color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
+</style>
 <!--Create Edit form -->
 <!doctype html>
 <html>
@@ -146,11 +163,7 @@ if(isset($_POST['btn-update'])){
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
-	 <li class="nav-item">
-        <a class="nav-link" href="../../produits.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Produits</span></a>
-      </li>
+	 
 	  <li class="nav-item">
         <a class="nav-link" href="livraison.html">
           <i class="fas fa-fw fa-table"></i>
@@ -172,23 +185,35 @@ if(isset($_POST['btn-update'])){
 
 	
 <center><form method="POST"></center>
-<center><u><h2>Modifier les informations des livraisons:</h2></u></center>
+<center><h2>Modifier les informations des livraisons:</h2></center>
 <center>
 <table border="4">
-<tr><td>
-<table>
-<tr><th>Id:  </th><td>  <input type="text" name="id" placeholder="id" value="<?php echo $donne['id']; ?>"></td></tr>
-<tr><th>Number: </th><td><input type="text" name="number" placeholder="Number" value="<?php echo $donne['number']; ?>"></td></tr>
-<tr><th>Town:   </th><td><input type="text" name="town" placeholder="Town" value="<?php echo $donne['town']; ?>"></td></tr>
-<tr><th>Adresse:</th><td><input type="text" name="adresse" placeholder="Adresse" value="<?php echo $donne['adresse']; ?>"></td></tr>
-<tr><th>Name:  </th><td> <input type="text" name="name" placeholder="Name" value="<?php echo $donne['name']; ?>"></td></tr>
-<tr><th>Reference:  </th><td> <input type="text" name="ref" placeholder="Ref" value="<?php echo $donne['ref']; ?>"></td></tr>
-</table></center>
-</td></tr>
-</table>
 
-<center><button type="submit" name="btn-update" id="btn-update" onClick="update()"><strong>Modifier</strong></button></center>
-<center><a href="afficher.php"><button type="button" value="button">Cancel</button></a></center>
+
+<tr>
+<th>Id:  </th>
+<th>Number: </th>
+<th>Town:</th>
+<th>Adresse:</th>
+<th>Name:  </th>
+<th>Reference:  </th>
+<th>Date livraison:  </th>
+</tr>
+<tr>
+<td><input type="text" name="id" placeholder="id" value="<?php echo $donne['id']; ?>"></td>
+<td><input type="text" name="number" placeholder="Number" value="<?php echo $donne['number']; ?>"></td>
+<td><input type="text" name="town" placeholder="Town" value="<?php echo $donne['town']; ?>"></td>
+<td><input type="text" name="adresse" placeholder="Adresse" value="<?php echo $donne['adresse']; ?>"></td>
+<td> <input type="text" name="name" placeholder="Name" value="<?php echo $donne['name']; ?>"></td>
+<td> <input type="text" name="ref" placeholder="Ref" value="<?php echo $donne['ref']; ?>"></td>
+<td> <input type="text" name="datel" placeholder="Ref" value="<?php echo $donne['datel']; ?>"></td>
+
+</tr>
+</table></br></center>
+
+
+<center><button type="submit" name="btn-update" id="btn-update" onClick="update()" class="btn btn-secondary"><strong>Modifier</strong></button></center></br>
+<center><a href="afficher.php"><button type="button" value="button" class="btn btn-secondary">Cancel</button></a></center></br>
 
 </form>
 

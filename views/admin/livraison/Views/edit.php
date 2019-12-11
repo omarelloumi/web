@@ -24,8 +24,9 @@ if(isset($_POST['btn-update'])){
  $adresse = $_POST['adresse'];
  $name = $_POST['name'];
  $ref = $_POST['ref'];
+ $datel = $_POST['datel'];
  
- $update = "UPDATE livraison SET id='$id', number='$number',town='$town',adresse='$adresse',name='$name',ref='$ref' WHERE id=". $_GET['edit_id'];
+ $update = "UPDATE livraison SET id='$id', number='$number',town='$town',adresse='$adresse',name='$name',ref='$ref',datel='$datel' WHERE id=". $_GET['edit_id'];
  $up = mysqli_query($conn, $update);
  if(!isset($sql)){
  die ("Error $sql" .mysqli_connect_error());
@@ -243,12 +244,29 @@ if(isset($_POST['btn-update'])){
 <td>
 <table class="content-table">
 
-<thead><tr><th>Id:</th></thead><tbody><td><input type="text" name="id" placeholder="id" value="<?php echo $donne['id']; ?>"></td></tr></tbody>
-<thead><tr><th>Number:</th></thead><tbody><td><input type="text" name="number" placeholder="Number" value="<?php echo $donne['number']; ?>"></td></tr></tbody>
-<thead><tr><th>Town:</th></thead><tbody><td><input type="text" name="town" placeholder="Town" value="<?php echo $donne['town']; ?>"></td></tr></tbody>
-<thead><tr><th>Adresse:</th></thead><tbody><td><input type="text" name="adresse" placeholder="Adresse" value="<?php echo $donne['adresse']; ?>"></td></tr></tbody>
-<thead><tr><th>Name:</th></thead><tbody><td><input type="text" name="name" placeholder="Name" value="<?php echo $donne['name']; ?>"></td></tr></tbody>
-<thead><tr><th>Reference:</th></thead><tbody><td><input type="text" name="ref" placeholder="Reference" value="<?php echo $donne['ref']; ?>"></td></tr></tbody>
+<thead>
+<tr>
+<th>Id:</th>
+<td><input type="text" name="id" placeholder="id" value="<?php echo $donne['id']; ?>"></td>
+</tr>
+<tr>
+<th>Number:</th>
+<td><input type="text" name="number" placeholder="Number" value="<?php echo $donne['number']; ?>"></td>
+</tr>
+<tr>
+<th>Town:</th><td><input type="text" name="town" placeholder="Town" value="<?php echo $donne['town']; ?>"></td>
+</tr>
+<tr>
+<th>Adresse:</th><td><input type="text" name="adresse" placeholder="Adresse" value="<?php echo $donne['adresse']; ?>"></td>
+</tr>
+<tr>
+<th>Name:</th><td><input type="text" name="name" placeholder="Name" value="<?php echo $donne['name']; ?>"></td>
+</tr>
+<tr>
+<th>Reference:</th><td><input type="text" name="ref" placeholder="Reference" value="<?php echo $donne['ref']; ?>"></td>
+</tr>
+<tr>
+<th>Date:</th><td><input type="text" name="datel" placeholder="Date" value="<?php echo $donne['datel']; ?>"></td></tr></thead>
 
 </td>
 </tr>

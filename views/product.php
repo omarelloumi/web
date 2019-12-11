@@ -170,13 +170,14 @@
 						  ?>
       <section class="contact py-lg-4 py-md-3 py-sm-3 py-3">
          <div class="container-fluid py-lg-5 py-md-4 py-sm-4 py-3">
-            
+            <div class="row col">
                         <?php
 			             while($row=$listep->fetch())
 						  { if ($row['qte']>5){
 							 ?>
-                 <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6 product-men women_two">
+			                  <div class="col-lg-4 col-md-6 col-sm-6 product-men women_two">
+
+                        
                         <div class="product-toys-info">
                            <div class="men-pro-item">
                               <div class="men-thumb-item">
@@ -194,7 +195,7 @@
                                        <div class="product_price">
                                           
                                           <div class="grid-price mt-2">
-                                             <span class="money "><?php echo $row['prix'];?>dt <?php echo $row['nom'];?></span>
+                                             <span class="money "> <?php echo $row['nom'];?><br> <?php echo $row['prix'];?>dt</span>
                                           </div>
                                        </div>
                                       
@@ -216,10 +217,11 @@
                            </div>
                         </div>
                      </div> 
-                  </div>
+                                   
+
 			  <?php
 						  } }}
-	   ?>
+	   ?></div>
          </div>
       </section>
 	  
@@ -325,7 +327,7 @@
       <script src='js/jquery-2.2.3.min.js'></script>
       <!--//js working-->
       <!-- cart-js -->
-      <script src="js/minicart.js"></script>
+      <!--script src="js/minicart.js"></script!-->
       <script>
          toys.render();
          

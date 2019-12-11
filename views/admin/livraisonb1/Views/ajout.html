@@ -121,11 +121,7 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
-	 <li class="nav-item">
-        <a class="nav-link" href="../../produits.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Produits</span></a>
-      </li>
+	 
 	  <li class="nav-item">
         <a class="nav-link" href="livraison.html">
           <i class="fas fa-fw fa-table"></i>
@@ -167,6 +163,10 @@
 									   <div class="controls">
                                           <label name="reference" class="control-label">Reference de la commande: </label>
                                           <input name="reference" class="form-control" type="text" placeholder="Reference">
+                                       </div>
+									   <div class="controls">
+                                          <label name="datel" class="control-label">Date de la commande: </label>
+                                          <input name="datel" class="form-control" type="text" placeholder="Date" value="<?php echo $date=date('y-m-d', strtotime('+7 day')); ?>">
                                        </div>
                                     </div>
 									 
