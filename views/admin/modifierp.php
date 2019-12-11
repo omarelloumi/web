@@ -11,6 +11,7 @@ if (isset($_GET['ref'])){
 		$Prix=$row['prix'];
 		$Cat=$row['cat'];
 		$Img=$row['img'];
+		$Qte=$row['qte'];
 		
 ?>
 <html lang="en">
@@ -154,39 +155,50 @@ if (isset($_GET['ref'])){
 
     <div id="content-wrapper">
 		<center><h1>Modifier catégorie</h1></center>
-		<form name="f" action="ajoutercategorie.php" method="get">
 <div class="form-label-group">
-	<form method="POST">
+	<form method="POST" action="mp.php">
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 <tr>
-<td>Id</td>
-<td><input class="form-control" type="text" name="Idd" value="<?PHP echo $Id ?>"></td>
+<td>Ref</td>
+<td><input class="form-control" type="text" name="Ref" value="<?PHP echo $Ref ?>"></td>
 </tr>
 <tr>
 <td>Nom</td>
 <td><input class="form-control" type="text" name="Nom" value="<?PHP echo $Nom ?>"></td>
 </tr>
-
+<tr>
+<td>Prix</td>
+<td><input class="form-control" type="text" name="Prix" value="<?PHP echo $Prix?>"></td>
+</tr>
+	<tr>
+<td>Cat</td>
+<td><input class="form-control" type="text" name="Cat" value="<?PHP echo $Cat ?>"></td>
+</tr>
+	<tr>
+<td>Image</td>
+<td><input class="form-control" type="text" name="Img" value="<?PHP echo $Img ?>"></td>
+</tr>
+	<tr>
+<td>Quantité</td>
+<td><input class="form-control" type="text" name="Qte" value="<?PHP echo $Qte ?>"></td>
+</tr>
 <tr>
 <td></td>
 <td><input class="btn btn-primary btn-block" type="submit" name="modifier" value="modifier"></td>
 </tr>
 
 </table>
+				<input type="hidden" name="Idd" value="<?PHP echo $_GET['ref'];?>">
+
 </form>
 <?PHP
 	}
 }
-if (isset($_POST['modifier'])){
-	$Categorie=new Categorie($_POST['Id'],$_POST['Nom']);
-	$CategorieC->ModifierCategorie($Categorie,$_POST['Idd']);
-	echo $_POST['Idd'];
-	header('Location: afficherc.php');
-}
+
 ?>
 		</div>
 	  
-	  </form>
+	  
    
 
       <!-- Sticky Footer -->

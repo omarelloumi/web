@@ -142,7 +142,7 @@
 
     <div id="content-wrapper">
 		<center><h1>Modifier catégorie</h1></center>
-		<form name="f" action="modifierc.php" method="get">
+		
 <div class="form-label-group">
 	<?PHP
 include "C:\wamp/www/entities/Categorie.php" ;
@@ -154,15 +154,15 @@ if (isset($_GET['Id'])){
 		$Id=$row['id'];
 		$Nom=$row['nom'];
 	?>
-	<form method="POST">
+	<form method="POST" action="mc.php">
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 <tr>
 <td>Id</td>
-<td><input class="form-control" type="text" name="Id" value="<?PHP echo $Id; ?>"></td>
+<td><input class="form-control" type="text" name="Id" value="<?PHP echo $Id ?>"></td>
 </tr>
 <tr>
 <td>Nom</td>
-<td><input class="form-control" type="text" name="Nom" value="<?PHP echo $Nom; ?>"></td>
+<td><input class="form-control" type="text" name="Nom" value="<?PHP echo $Nom ?>"></td>
 </tr>
 
 <tr>
@@ -175,16 +175,11 @@ if (isset($_GET['Id'])){
 <?PHP
 	}
 }
-if (isset($_POST['Idd'])){
-	$Categorie=new Categorie($_POST['Id'],$_POST['Nom']);
-	$CategorieC->ModifierCategorie($Categorie,$_POST['Idd']);
-	echo $_POST['Idd'];
-	header('Location: afficherc.php');
-}
+
 ?>
 		</div>
 	  
-	  </form>
+	 
    
 
       <!-- Sticky Footer -->
