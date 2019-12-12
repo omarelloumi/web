@@ -61,7 +61,7 @@
          <div class="container-fluid">
             <div class="hedder-up row">
                <div class="col-lg-3 col-md-3 logo-head">
-                  <h1><a class="navbar-brand" href="index.html">Toys-Shop</a></h1>
+                  <h1><a class="navbar-brand" href="index.html">Dolce Casa</a></h1>
                </div>
                <div class="col-lg-5 col-md-6 search-right">
                   <form class="form-inline my-lg-0">
@@ -97,19 +97,18 @@
             <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                   <ul class="navbar-nav ">
-                     <li class="nav-item active">
-                        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-                     </li>
-                     <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
-                     </li>
-                     <li class="nav-item">
-                        <a href="service.html" class="nav-link">Service</a>
-                     </li>
-                    
-                 
-					    <li class="nav-item dropdown">
+               <ul class="navbar-nav ">
+                  <li class="nav-item ">
+                     <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  
+                  <li class="nav-item">
+                     <a href="service.html" class="nav-link">Service</a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="shop.html" class="nav-link">Shop Now</a>
+                  </li>
+				  <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         categories
                         </a>
@@ -130,12 +129,12 @@
 					  }
 					  ?>
 							 </div>
-							</li>
-					 
-                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
-                     </li>
-                  </ul>
+                  
+                  
+                  <li class="nav-item active">
+                     <a href="contact.html " class="nav-link">Contact</a>
+                  </li>
+               </ul>
             </div>
          </nav>
       </div>

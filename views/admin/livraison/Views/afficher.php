@@ -136,43 +136,47 @@
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
-               <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                   <ul class="navbar-nav ">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../../front/views/index.php">Home <span class="sr-only">(current)</span></a>
+                     </li>
+                     <ul class="navbar-nav ">
+                     
+                     
+                     <li class="nav-item">
+                        <a href="../../../service.html" class="nav-link">Service</a>
                      </li>
                      <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
-                     </li>
-                     <li class="nav-item">
-                        <a href="service.html" class="nav-link">Service</a>
-                     </li>
-                     <li class="nav-item active">
-                        <a href="shop.html" class="nav-link">Shop Now</a>
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pages
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                           <a class="nav-link" href="icon.html">404 Page</a>
-                           <a class="nav-link " href="typography.html">Typography</a>
-                        </div>
+                        <a href="../../front/views/shop.php" class="nav-link">Shop Now</a>
                      </li>
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Product
+                        categories
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                           <a class="nav-link" href="product.html">Kids Toys</a>
-                           <a class="nav-link " href="product.html">Dolls</a>
-                           <a class="nav-link " href="product.html">Key Toys</a>
-                           <a class="nav-link " href="product.html">Boys Toys</a>
-                        </div>
-                     </li>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">	
+						  <?php
+						  include("../../../../core/categorieC.php");
+						  $categorieC=new CategorieC();
+						  $liste=$categorieC->AfficherCategorie();
+						  while($row=$liste->fetch())
+						  {
+						  ?>
+					    
+                     
+                        <a class="nav-link" href="../../../product.php?cat=<?php echo $row['id']?>"><?php echo $row['nom']; ?></a>
+                       
+                        
+					  <?php
+					  }
+					  ?>
+					  </li>
+							 
+                     
                      <li class="nav-item">
                         <a href="contact.html" class="nav-link">Contact</a>
                      </li>
+					 
                   </ul>
                </div>
             </nav>
@@ -287,7 +291,7 @@
 		<td><input type="submit" value="Oui" class='btn btn-info' onclick="test2()" /></td>
 		
 		<td>
-		<form method="POST" action="mailsnack .php" name="f1">
+		<form method="POST" action="oui.php" name="f1">
 		<input type="submit" value="Non" class='btn btn-info' onclick="test1()"/>
 		</form>
 	

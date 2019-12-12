@@ -14,7 +14,7 @@ $mail = new PHPMailer();
 	$mail->SMTPAuth = true;
 	//set login details for Gmail account
 	$mail->Username = "ons.driss@esprit.tn";
-	$mail->Password = "Nouretons1999";
+	$mail->Password = "nouretons1999";
 
 	//set type of protection
 	$mail->SMTPSecure = "tls"; //or we can use TLS

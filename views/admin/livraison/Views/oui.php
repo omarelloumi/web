@@ -90,7 +90,7 @@
                      </li>
                      <li>
                         <span class="fas fa-envelope"></span>
-                        <p><a href="mailto:info@example.com">info@example1.com</a></p>
+                        <p><a href="mailto:info@example.com">dolce.casa@example1.com</a></p>
                      </li>
                      <li>
                      </li>
@@ -100,7 +100,7 @@
             <div class="container-fluid">
                <div class="hedder-up row">
                   <div class="col-lg-3 col-md-3 logo-head">
-                     <h1><a class="navbar-brand" href="index.html">Toys-Shop</a></h1>
+                     <h1><a class="navbar-brand" href="index.html">Dolce Casa</a></h1>
                   </div>
                   <div class="col-lg-5 col-md-6 search-right">
                      <form class="form-inline my-lg-0">
@@ -138,40 +138,44 @@
                <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                   <ul class="navbar-nav ">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../../../index.php">Home <span class="sr-only">(current)</span></a>
+                     </li>
+                     <ul class="navbar-nav ">
+                     
+                     
+                     <li class="nav-item">
+                        <a href="../../../service.html" class="nav-link">Service</a>
                      </li>
                      <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
-                     </li>
-                     <li class="nav-item">
-                        <a href="service.html" class="nav-link">Service</a>
-                     </li>
-                     <li class="nav-item active">
-                        <a href="shop.html" class="nav-link">Shop Now</a>
-                     </li>
-                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Pages
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                           <a class="nav-link" href="icon.html">404 Page</a>
-                           <a class="nav-link " href="typography.html">Typography</a>
-                        </div>
+                        <a href="../../front/views/shop.php" class="nav-link">Shop Now</a>
                      </li>
                      <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Product
+                        categories
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                           <a class="nav-link" href="product.html">Kids Toys</a>
-                           <a class="nav-link " href="product.html">Dolls</a>
-                           <a class="nav-link " href="product.html">Key Toys</a>
-                           <a class="nav-link " href="product.html">Boys Toys</a>
-                        </div>
-                     </li>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">	
+						  <?php
+						  include("../../../../core/categorieC.php");
+						  $categorieC=new CategorieC();
+						  $liste=$categorieC->AfficherCategorie();
+						  while($row=$liste->fetch())
+						  {
+						  ?>
+					    
+                     
+                        <a class="nav-link" href="../../../product.php?cat=<?php echo $row['id']?>"><?php echo $row['nom']; ?></a>
+                       
+                        
+					  <?php
+					  }
+					  ?>
+					  </li>
+							 
+                     
                      <li class="nav-item">
                         <a href="contact.html" class="nav-link">Contact</a>
                      </li>
+					 
                   </ul>
                </div>
             </nav>
@@ -283,7 +287,7 @@
 </tbody>
 </tr>
 </table>
-<form method="POST" action="index.html" name="f4">
+<form method="POST" action="../../../index.php" name="f4">
 <input type="submit" value="ok" onclick="test1()" class="bouton1" />
 </form>
 

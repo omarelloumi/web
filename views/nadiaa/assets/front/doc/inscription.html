@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>inscription</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script language="javascript">
+		function tester()
+		{
+			var test=1,j ;
+			
+			if(document.f1.cin.value=="")
+				{
+				alert("Le numéro de CIN est obligatoire.") ; 
+					test = 0 ;	
+				}
+			else if(document.f1.cin.value.length!=8)
+			{
+				test=0 ;
+				alert("Le numéro de CIN doit contenir 8 chiffres.") ;
+			}
+			if(document.f1.ncnss.value=="")
+				{
+					alert("Le numéro de CNSS est obligatoire") ;
+					document.getElementById("element").style.backgroundColor="red";
+					test=0 ;
+				}
+			var h = document.getElementById("homme").checked ;
+			var f = document.getElementById("femme").checked ;
+			if(!h && !f)
+				{
+					alert("Vous êtes homme ou femme ?") ;
+					test=0 ;
+				}
+			
+			if(test==1)
+				document.write("Merci pour votre inscription") ;
+				
+		}
+	</script>
+</head>
+
+<body>
+	<fieldset style="width:360px;">
+		<legend><h3>Inscription</h3></legend>
+		<form name="f1">
+			<table>
+<tr>
+<td>Nom</td>
+<td><input type="text" name="nom" class="color"></td>
+</tr>
+<tr>
+<td>prénom</td>
+<td><input type="text" name="prénom" class="color"></td>
+</tr>
+<tr>
+<td>CIN</td>
+<td><input type="text" name="cin" class="color"></td>
+</tr>
+<tr>
+<td>N°CNSS</td>
+<td><input type="text" name="ncnss" class="color" id="element"></td>
+</tr>
+<tr>
+<td>Sexe</td>
+<td><input type="radio" name="homme" id="homme">homme<input type="radio" name="femme" id="femme">femme</td>
+</tr>
+<tr>
+<td>Filiére de soins</td>
+<td><select><option>Filière public</option><option>Filière privée</option><option>Système de remboursement</option></select></td>
+</tr>
+		</table>
+<input type="submit" name="valider" value="valider" onclick="tester()" >
+		</form>
+</fieldset>
+	
+</body>
+</html>

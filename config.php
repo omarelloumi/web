@@ -1,5 +1,5 @@
 <?php
-  class config {
+  class config2 {
     private static $instance = NULL;
 
     public static function getConnexion() 

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>formulaire</title>
+	<script language="javascript">
+		function tester()
+		{
+			var test=document.f1.prix.value ;
+			var cont=1 ;
+			if(test=="" || isNaN(test))
+				{
+					alert("Veuillez saisir un prix valide à convertir") ;
+					cont=0 ;
+				}
+		var test1 = document.getElementById("TND").checked ;	
+		var	test2 = document.getElementById("EUR").checked ;
+			if(!test1 && !test2)
+				{
+					alert("Veuillez choisir une monnaie de départ") ;
+					cont=0 ;
+				}
+			var test3 = document.getElementById("TND1").checked ;	
+		var	test4 = document.getElementById("EUR1").checked ;
+			if((test1==true && test3==true ) || (test2==true && test4==true ))
+				{
+					alert("Veuillez choisir une monnaie de destination différente de la monnaie de départ") ;
+					cont=0 ;
+				}
+			 var test5 = document.getElementById("bool").checked ;
+			if(!test5)
+				{
+					alert("Veillez accepter le taux de change suivant : 1 EUR = 2.41 TND") ;
+					cont=0 ;
+				}
+			
+			if(cont==1)
+				{
+					var s = 0 ;
+					if(test1)
+						{
+							s += (f1.prix.value * (0.317789)) ;
+						}
+						else
+							{
+								s += f1.prix.value*2.41 ;
+							}
+					
+					document.f1.res.value = s ;
+				}
+		}
+	</script>
+</head>
+
+<body>
+	<fieldset style="width:360px;">
+	<legend>Conversion en ligne</legend>
+		<form name="f1" >
+			<table>
+			<tr>
+			<td>Monnaie de Depart :</td>
+				<td><input type="radio" name="TND" id="TND">TND</td>
+				</tr>
+				<tr>
+				<td></td>
+				<td><input type="radio" name="EUR" id="EUR">EUR</td>
+			</tr>
+				<tr>
+				<td>Monnaie de Destination :</td><td><select><option id="TND1">TND</option><option id="EUR1">EUR</option></select></td></tr>
+				<tr><td>Prix avant conversion</td><td><input type="text" name="prix"></td></tr>
+				<tr>
+				<td><input type="checkbox" name="bool" id="bool">J'accepte le taux de chane suivant : 1 Eur = 2.41 TND</td></tr>
+			<tr>
+				<td><input type="button" value="Convertir" onclick="tester()" ></td><td> <input type="text" name="res" value=""></td></tr>
+			</table>
+			
+		</form>
+		
+	</fieldset>
+</body>
+</html>

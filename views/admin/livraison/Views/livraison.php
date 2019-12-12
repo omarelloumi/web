@@ -69,7 +69,7 @@
                      <h1><a class="navbar-brand" href="index.html">Toys-Shop</a></h1>
                   </div>
                   <div class="col-lg-5 col-md-6 search-right">
-                     <form class="form-inline my-lg-0">
+                     <form class="form-inline my-lg-0" >
                         <input class="form-control mr-sm-2" type="search" placeholder="Search">
                         <button class="btn" type="submit">Search</button>
                      </form>
@@ -217,6 +217,7 @@
                                  </div>
                               </section>
                           </form>
+
                           <form action="payment.html" method="post" class="creditly-card-form agileinfo_form" >
 						    <div class="checkout-right-basket">
                               <a href="payment.html">Make a Payment </a>

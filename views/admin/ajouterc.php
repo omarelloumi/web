@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?PHP
-include "C:\wamp\www\core\CategorieC.php";
+include "../..\core\CategorieC.php";
 $Categorie1C=new CategorieC();
 $listeCategories=$Categorie1C->AfficherCategorie() ;
 ?>
@@ -121,8 +121,8 @@ $listeCategories=$Categorie1C->AfficherCategorie() ;
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+       <li class="nav-item">
+        <a class="nav-link" href="./back/tables.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
@@ -140,6 +140,11 @@ $listeCategories=$Categorie1C->AfficherCategorie() ;
         <a class="nav-link" href="./livraisonb1/Views/livraison.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Livraison/Livreurs</span></a>
+      </li>
+		<li class="nav-item">
+        <a class="nav-link" href="./livraisonb1/Views/reclamation.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Reclamation</span></a>
       </li>
     </ul>
 

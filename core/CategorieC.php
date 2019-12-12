@@ -5,7 +5,7 @@ class CategorieC
 	function AjouterCategorie($Categorie)
 	{
 		$sql = "insert into categories (Id,Nom) values(:Id,:Nom)";
-		$db = config::getConnexion() ;
+		$db = config2::getConnexion() ;
 		try
 		{
 			$req = $db->prepare($sql) ;
@@ -31,7 +31,7 @@ class CategorieC
 	function AfficherCategorie()
 	{
 		$sql="SElECT * From categories";
-		$db = config::getConnexion();
+		$db = config2::getConnexion();
 		try{
 		$liste=$db->query($sql);
 		return $liste;
@@ -45,7 +45,7 @@ class CategorieC
 {
 		$sql="UPDATE categories SET Id=:Idd, Nom=:Nom WHERE Id=:Id";
 		
-		$db = config::getConnexion();
+		$db = config2::getConnexion();
 		//$db->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
 try{		
         $req=$db->prepare($sql);
@@ -72,7 +72,7 @@ try{
 	function SupprimerCategorie($Id)
 	{
 		$sql="DELETE FROM categories where Id= :Id";
-		$db = config::getConnexion();
+		$db = config2::getConnexion();
         $req=$db->prepare($sql);
 		$req->bindValue(':Id',$Id);
 		try{
@@ -85,7 +85,7 @@ try{
 
 	function RecupererCategorie($Id){
 		$sql="SELECT * from categories where Id=$Id";
-		$db = config::getConnexion();
+		$db = config2::getConnexion();
 		try{
 		$liste=$db->query($sql);
 		return $liste;
@@ -97,7 +97,7 @@ try{
 	
 	function RechercherListeCategorie($Nom){
 		$sql="SELECT * from categories where Nom=$Nom";
-		$db = config::getConnexion();
+		$db = config2::getConnexion();
 		try{
 		$liste=$db->query($sql);
 		return $liste;
@@ -108,7 +108,7 @@ try{
 	}
 	function RechercherC($key){
 		$sql="SELECT * from categories where id LIKE '%$key%' OR nom LIKE '%$key%' ";
-		$db = config::getConnexion();
+		$db = config2::getConnexion();
 		try{
 		$liste=$db->query($sql);
 		return $liste;

@@ -1,6 +1,6 @@
 <?PHP
-include "C:\wamp/www/entities/Produit.php" ;
-include "C:\wamp\www\core\ProduitC.php" ;
+include "../../entities/Produit.php" ;
+include "../..\core\ProduitC.php" ;
 if (isset($_POST['modifier'])){
 		$ProduitC=new ProduitC();
 

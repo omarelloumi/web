@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?PHP
-include "C:\wamp/www/entities/Produit.php" ;
-include "C:\wamp\www\core\ProduitC.php" ;
+include "../../entities/Produit.php" ;
+include "../..\core\ProduitC.php" ;
 if (isset($_GET['ref'])){
 	$ProduitC=new ProduitC();
     $result=$ProduitC->RecupererProduit($_GET['ref']);
@@ -131,8 +131,8 @@ if (isset($_GET['ref'])){
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+       <li class="nav-item">
+        <a class="nav-link" href="./back/tables.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
@@ -150,6 +150,11 @@ if (isset($_GET['ref'])){
         <a class="nav-link" href="./livraisonb1/Views/livraison.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Livraison/Livreurs</span></a>
+      </li>
+		<li class="nav-item">
+        <a class="nav-link" href="./livraisonb1/Views/reclamation.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Reclamation</span></a>
       </li>
     </ul>
 

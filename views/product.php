@@ -104,12 +104,13 @@
                   <li class="nav-item ">
                      <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item">
-                     <a href="about.html" class="nav-link">About</a>
-                  </li>
+                  
                   <li class="nav-item">
                      <a href="service.html" class="nav-link">Service</a>
                   </li>
+				  <li class="nav-item">
+                        <a href="./admin/front/views/shop.php" class="nav-link">Shop Now</a>
+                     </li>
                   
                   
                  <li class="nav-item dropdown">
@@ -118,7 +119,7 @@
                         </a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">	
 						  <?php
-						  include("C:\wamp\www\core\CategorieC.php");
+						  include("../core/categorieC.php");
 						  $categorieC=new CategorieC();
 						  $liste=$categorieC->AfficherCategorie();
 						  while($row=$liste->fetch())
@@ -133,7 +134,6 @@
 					  }
 					  ?>
 							 </div>
-							</li>
                   <li class="nav-item">
                      <a href="contact.html " class="nav-link">Contact</a>
                   </li>
@@ -162,7 +162,7 @@
       <!-- //short-->
       <!--show Now-->  
 	                      <?php
-						  include("C:\wamp\www\core/ProduitC.php");
+						  include("..\core/ProduitC.php");
 	   					if (isset($_GET['cat'])){
 
 						  $produitC=new ProduitC();
@@ -181,7 +181,7 @@
                         <div class="product-toys-info">
                            <div class="men-pro-item">
                               <div class="men-thumb-item">
-                                <img src="images/<?php echo $row['img'];?>" style="width:200px" class="img-thumbnail img-fluid" alt="">
+                                <img src="images/<?php echo $row['img'];?>" style="width:400px" class="img-thumbnail img-fluid" alt="">
                                  <div class="men-cart-pro">
                                     <div class="inner-men-cart-pro">
                                        <a href="single.html" class="link-product-add-cart">Quick View</a>

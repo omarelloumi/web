@@ -1,5 +1,5 @@
 <?PHP
-include "C:\wamp\www\core\ProduitC.php" ;
+include "../..\core\ProduitC.php" ;
 $Produit1C=new ProduitC();
 if (isset($_GET['search_key'])){
 	$listeProduits=$Produit1C->RechercherP($_GET['search_key']);
@@ -127,8 +127,8 @@ $listeProduits=$Produit1C->AfficherProduit();}
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+       <li class="nav-item">
+        <a class="nav-link" href="./back/tables.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
@@ -146,6 +146,11 @@ $listeProduits=$Produit1C->AfficherProduit();}
         <a class="nav-link" href="./livraisonb1/Views/livraison.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Livraison/Livreurs</span></a>
+      </li>
+		<li class="nav-item">
+        <a class="nav-link" href="./livraisonb1/Views/reclamation.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Reclamation</span></a>
       </li>
     </ul>
 

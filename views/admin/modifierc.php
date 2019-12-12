@@ -118,8 +118,8 @@
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+       <li class="nav-item">
+        <a class="nav-link" href="./back/tables.php">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
@@ -138,6 +138,11 @@
           <i class="fas fa-fw fa-table"></i>
           <span>Livraison/Livreurs</span></a>
       </li>
+		<li class="nav-item">
+        <a class="nav-link" href="./livraisonb1/Views/reclamation.php">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Reclamation</span></a>
+      </li>
     </ul>
 
     <div id="content-wrapper">
@@ -145,8 +150,8 @@
 		
 <div class="form-label-group">
 	<?PHP
-include "C:\wamp/www/entities/Categorie.php" ;
-include "C:\wamp\www\core\CategorieC.php" ;
+include "../../entities/Categorie.php" ;
+include "../..\core\CategorieC.php" ;
 if (isset($_GET['Id'])){
 	$CategorieC=new CategorieC();
     $result=$CategorieC->RecupererCategorie($_GET['Id']);

@@ -104,12 +104,15 @@
                      <li class="nav-item active">
                         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                      </li>
+                     
                      <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
+                        <a href="service.php" class="nav-link">Service</a>
                      </li>
-                     <li class="nav-item">
-                        <a href="service.html" class="nav-link">Service</a>
+					 <li class="nav-item">
+                        <a href="./admin/front/views/shop.php" class="nav-link">Shop Now</a>
                      </li>
+                     
+                    
                     
                  
 					    <li class="nav-item dropdown">

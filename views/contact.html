@@ -101,9 +101,7 @@
                   <li class="nav-item ">
                      <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                   </li>
-                  <li class="nav-item">
-                     <a href="about.html" class="nav-link">About</a>
-                  </li>
+                  
                   <li class="nav-item">
                      <a href="service.html" class="nav-link">Service</a>
                   </li>
@@ -111,25 +109,28 @@
                      <a href="shop.html" class="nav-link">Shop Now</a>
                   </li>
                   <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Pages
-                     </a>
-                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="nav-link" href="icon.html">404 Page</a>
-                        <a class="nav-link " href="typography.html">Typography</a>
-                     </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Product
-                     </a>
-                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="nav-link" href="product.html">Kids Toys</a>
-                        <a class="nav-link " href="product.html">Dolls</a>
-                        <a class="nav-link " href="product.html">Key Toys</a>
-                        <a class="nav-link " href="product.html">Boys Toys</a>
-                     </div>
-                  </li>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        categories
+                        </a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">	
+						  <?php
+						  include("C:\wamp\www\core\CategorieC.php");
+						  $categorieC=new CategorieC();
+						  $liste=$categorieC->AfficherCategorie();
+						  while($row=$liste->fetch())
+						  {
+						  ?>
+					    
+                     
+                        <a class="nav-link" href="product.php?cat=<?php echo $row['id']?>"><?php echo $row['nom']; ?></a>
+                       
+                        
+					  <?php
+					  }
+					  ?>
+							 </div>
+							</li>
+                  
                   <li class="nav-item active">
                      <a href="contact.html " class="nav-link">Contact</a>
                   </li>
